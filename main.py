@@ -26,15 +26,41 @@ def get_data(ticker:str)->dict:
         
         response = get(base_url+path, headers = headers)
         
-        # getting the closing data
+        # getting the closing data (formatting seen just by using browser to view data)
         hist_dict = response.json().get("data", {}).get("tradesTable", {}).get("rows", [])
         # reformatting the data
         close_dict = {
-            entry["date"]: entry["close"].replace("$", "")
-            for entry in hist_dict
+            "ticker": ticker,
+            "prices": {
+                entry["date"]: entry["close"].replace("$", "") # getting rid of $ for float conversion
+                for entry in hist_dict
+            }
         }
         return close_dict
     except Exception as e:
         print(e) 
 
-print(get_data("AAPL"))
+def process_data(data:dict)->dict:
+    prices = [float(price) for price in data["prices"].values()]
+    prices.sort()
+    min = prices[0]
+    max = prices[-1]
+    length = len(prices)
+    mean = sum(prices)/length
+    
+    if length % 2:
+        median = prices[length / 2]
+    else:
+        median = prices[int(length / 2)] + prices[int((length / 2) - 1)] /2
+    
+    processed_data = {
+        "ticker": data["ticker"],
+        "min": min,
+        "max": max,
+        "avg": mean,
+        "median": median
+    }
+    
+    return processed_data
+
+print(process_data(get_data("AAPL")))
