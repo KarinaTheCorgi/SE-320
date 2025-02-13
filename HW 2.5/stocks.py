@@ -92,7 +92,7 @@ def process_data(data:dict)->dict:
         mean = sum(prices)/length
         
         if length % 2:
-            median = prices[length / 2]
+            median = prices[int(length / 2)]
         else:
             median = prices[int(length / 2)] + prices[int((length / 2) - 1)] /2
         
