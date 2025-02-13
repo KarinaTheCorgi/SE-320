@@ -90,7 +90,7 @@ assert list(custom_seq(0)) == []
 assert list(custom_seq(1)) == [1]
 assert list(custom_seq(2)) == [1, 2]
 
-
+# Added after Peer Review to test their efficiency against mine
 print("Millionth Test")
 
 print("Millionth frib: ")
