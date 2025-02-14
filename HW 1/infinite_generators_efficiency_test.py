@@ -1,5 +1,5 @@
 """
-FileName: infinite_generators.py
+FileName: infinite_generators_efficiency_test.py
 Author: Karina Solis
 Date: 1/15/2025
 Resources:
@@ -8,6 +8,7 @@ Resources:
         https://peps.python.org/pep-0484/
     - typing module: Generator Class (ex. Type Hints - Generator [ln 15])
         https://docs.python.org/3/library/typing.html#annotating-generators-and-coroutines
+    - Daniil Gorshkov: efficiency test (Ln[94:])
 """
 from typing import Generator
 from time import time
