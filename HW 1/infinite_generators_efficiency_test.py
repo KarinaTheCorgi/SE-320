@@ -3,13 +3,14 @@ FileName: infinite_generators.py
 Author: Karina Solis
 Date: 1/15/2025
 Resources:
-    - Wolf Paulus: Python Syntax (ex. I didn't know that you could declare variables simultaneously [ln 30])
-    - PEP: Python Style Guide (ex. PEP 484 - Type Hints [ln 12])
+    - Wolf Paulus: Python Syntax (ex. I didn't know that you could declare variables simultaneously [ln 33])
+    - PEP 484: Python Style Guide (ex. Type Hints)
         https://peps.python.org/pep-0484/
-    - typing module: Generator Class (ex. )
+    - typing module: Generator Class (ex. Type Hints - Generator [ln 15])
         https://docs.python.org/3/library/typing.html#annotating-generators-and-coroutines
 """
 from typing import Generator
+from time import time
 
 # Fibonacci Sequence Definition
 def fibonacci(n:int = None)->Generator[int]:
@@ -26,9 +27,8 @@ def fibonacci(n:int = None)->Generator[int]:
     n2 = 1 # 2nd num in seq, later used to hold the (n - 1)st number to determine the nth number in the sequence
     count = 0 # loop var (inc)
     while True:
-        if n != None:
-            if count >= n:
-                break
+        if n != None and count >= n:
+            break
         yield n1
         n1, n2 = n2, n1 + n2
         count += 1
@@ -49,8 +49,7 @@ def custom_seq(n:int = None)->Generator[int]:
     diff = 1 # difference var (inc)
     count = 0 # loop var (inc)
     while True: 
-        if n != None:
-            if count >= n:
+        if n != None and count >= n:
                 break
         yield n1  
         n1 += diff
@@ -90,3 +89,14 @@ assert list(custom_seq(-1)) == []
 assert list(custom_seq(0)) == []
 assert list(custom_seq(1)) == [1]
 assert list(custom_seq(2)) == [1, 2]
+
+# Added after Peer Review to test their efficiency against mine
+print("Millionth Test")
+
+print("Millionth frib: ")
+start = time()
+for i in fibonacci(10000):  # Exhaust the generator
+    prime = i 
+end = time()
+print(prime)
+print(f"Time to find: {end-start} s")

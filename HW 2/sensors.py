@@ -1,5 +1,5 @@
 """
-FileName: Solis_sensors.py
+FileName: sensors.py
 Author: Karina Solis
 Date: 2/3/2025
 Resources:
