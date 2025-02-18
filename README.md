@@ -5,3 +5,5 @@ Now contains:
   - HW 2 -- classes (sensors)
   - HW 2.5 -- requests (stocks)
   - HW 3 -- decorators
+  - EC
+      - Google Doc Decoder
