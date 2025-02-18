@@ -1,21 +1,21 @@
 """
 FileName:  solis_decorator.py
 Author: Karina Solis
-Date: 2/13/2025
+Date: 2/17/2025
 Resources:
     - Wolf Paulus: Python Syntax - decorators
     - random module (Ln[15]):
         - https://www.w3schools.com/python/module_random.asp
     - time module (Ln[16]): 
         - https://www.geeksforgeeks.org/python-time-module/
-    - getting function name (Ln[])
+    - getting function name (Ln[60])
         - https://www.geeksforgeeks.org/python-how-to-get-function-name/
 """
 
 from random import randint
 from time import sleep, asctime
 
-def backoff(initial_delay: float, back_off_factor: float, max_delay: float) -> callable:
+def backoff(initial_delay: float = 0.01, back_off_factor: float = 2.0, max_delay: float = 3.0) -> callable:
     """
     adds customization to the backoff parameters
     
