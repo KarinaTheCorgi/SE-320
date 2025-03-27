@@ -6,6 +6,8 @@ Now contains:
   - HW 2.5 -- requests (stocks)
   - HW 3 -- decorators
   - HW 5 -- test driven development
-  - HW 6 -- Streamlit app ([code](https://github.com/KarinaTheCorgi/US-City-Population-Data))
   - EC
       - Google Doc Decoder
+   
+Other Repo:
+  - HW 6 -- Streamlit app ([code](https://github.com/KarinaTheCorgi/US-City-Population-Data))
