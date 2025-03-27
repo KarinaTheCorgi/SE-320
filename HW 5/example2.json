@@ -1,0 +1,11 @@
+{
+    "account_number": 56789,
+    "owner": "Test-Owner",
+    "balance": 123,
+    "transactions": [
+        "deposit: $100",
+        "withdraw: $77",
+        "deposit: $200",
+        "withdraw: $100"
+    ]
+}
